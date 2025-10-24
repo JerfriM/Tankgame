@@ -1,0 +1,12 @@
+# Necesitas el módulo headers activado
+<IfModule mod_headers.c>
+    # Esto agrega el encabezado de codificación para archivos que terminan en .br
+    <FilesMatch "\.br$">
+        Header set Content-Encoding br
+    </FilesMatch>
+</IfModule>
+
+# Agrega el tipo MIME (para que el navegador lo reconozca como JS)
+<IfModule mod_mime.c>
+    AddType application/javascript .br
+</IfModule>
